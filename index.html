@@ -92,7 +92,7 @@ document.querySelectorAll('[data-roof]').forEach(b=>b.onclick=()=>setRoof(+b.dat
 document.querySelectorAll('[data-cut]').forEach(b=>b.onclick=()=>setCut(b.dataset.cut==='1'));
 document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>view(b.dataset.v));
 document.getElementById('lbl').onchange=e=>labelGroup.visible=e.target.checked;
-document.getElementById('tog').onclick=()=>document.getElementById('body').classList.toggle('hide');
+document.getElementById('tog').onclick=()=>document.getElementById('body').classList.toggle('hide');if(innerWidth<700)document.getElementById('body').classList.add('hide');
 function resize(){if(typeof req==='function')req();r.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();}
 // ---- navegacao: zoom suave, duplo clique para focar, botoes
 let anim=null,dest=null;
